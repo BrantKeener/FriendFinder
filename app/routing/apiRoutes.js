@@ -4,10 +4,14 @@
 
 const quizData = require('../data/friends.js');
 
-apiJsonDisplay = (app) => {
+module.exports = (app) => {
+
     app.get('/api/friends', (req, res) => {
         res.json(quizData);
     });
-};
 
-module.exports = apiJsonDisplay;
+    app.post('/api/friends', (req, res) => {
+        quizData.push(req.body);
+        res.json(true);
+    });
+};
