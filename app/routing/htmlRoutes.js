@@ -1,5 +1,5 @@
 
-// Need path to help build the appropriate path to the html page we want.
+// require path to help build the appropriate path to the html page we want.
 
 const path = require('path');
 
