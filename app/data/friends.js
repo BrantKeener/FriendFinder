@@ -17,3 +17,13 @@
 //         0
 //     ]
 // }
+
+let quizData = [
+    {
+        name: 'Billy',
+        photo: 'Blah Link',
+        scores: [1,2,3,4,5,6,7,8,9,0]
+    }
+];
+
+module.exports = quizData;

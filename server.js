@@ -6,6 +6,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes')(app);
 
 // Setup so that our server can properly work with JSON data

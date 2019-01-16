@@ -9,7 +9,7 @@ htmlRouter = (app) => {
     app.get('*', (req, res) => {
         if(req.url === '/survey') {
             res.sendFile(path.join(__dirname, '../public/survey.html'));
-        } else {
+        } else if(req.url !== '/api/friends') {
             res.sendFile(path.join(__dirname, '../public/home.html'));
         }
     });
