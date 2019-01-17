@@ -1,4 +1,6 @@
 
+// This was used to generate all of the "answers" data for our friendly dummies.
+
 let answerArray = [];
 
 buildABud = () => {
