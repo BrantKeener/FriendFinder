@@ -112,7 +112,7 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-            <button type="submit">Find My Friend!</button>
+            <button id="quiz_submit" type="submit">Find My Friend!</button>
         </form>
     </div>
     <div id="data_links">
@@ -120,5 +120,27 @@
          | 
         <a href="https://github.com/BrantKeener/FriendFinder" target="_blank">Github Repo</a>
     </div>
+    <script type="text/javascript">
+        
+        document.getElementById('quiz_submit').addEventListener('click', jsonSubmit = (app) => {
+            event.preventDefault();
+
+            const questionNumber = 10;
+            let answerArray = [];
+            
+            for(let i = 1; i <= questionNumber; i++) {
+                let questionValue = document.getElementById(`quest${i}`).value;
+                answerArray.push(questionValue);
+            }
+
+            let newFriend = {
+                'name': document.getElementsByName('name')[0].value.trim(),
+                'photo': document.getElementsByName('pic')[0].value.trim(),
+                'scores': answerArray
+            }
+            console.log(newFriend);
+        });
+    
+    </script>
 </body>
 </html>
