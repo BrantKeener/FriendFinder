@@ -49,7 +49,7 @@ let quizData = [
     },
     {
         "name": "Sofia Stepanov",
-        "photo": "sofiaStepanov.jpg",
+        "photo": "/static/images/sofiaStepanov.jpg",
         "scores": [ 2, 1, 1, 4, 2, 1, 3, 3, 1, 5 ]
     },
 ];

@@ -1,8 +1,5 @@
 
-    // TODO add AJAX call for API below: blog.garstasio.com/you-dont-need-jquery/ajax
-
 // Document interaction hadnled via event delegation.
-
 document.addEventListener('click', (event) => {
     if(event.target.id === 'quiz_submit') {
         event.preventDefault();
@@ -23,10 +20,13 @@ document.addEventListener('click', (event) => {
         case('modal show-modal'):
         toggleModal();
         break;
+        case('modal show-modal modal-center'):
+        toggleModal();
+        break;
     };
 });
 
-// This is used to allow our modal to open and close
+// This is used to allow our modal to open and close. In addition, this popluates the modal with the appropriate dialog or images.
 toggleModal = (display, friend) => {
     const modal = document.querySelector('.modal');
     modal.classList.toggle('show-modal');
@@ -36,6 +36,7 @@ toggleModal = (display, friend) => {
         p.textContent = 'You have forgotten to enter either Name or Photo.'
         document.querySelector('#modal-content').appendChild(p);
     } else if (display === 'friend') {
+        modal.classList.toggle('modal-center');
         document.querySelector('#modal-title').textContent = friend.name;
         let image = document.createElement('img');
         image.src = friend.photo;
@@ -76,6 +77,7 @@ jsonSubmit = () => {
     };
 };
 
+// An errorHandler for our post request
 const handleErrors = (response) => {
     if(!response.ok) {
         throw (response.statusText);
@@ -83,6 +85,7 @@ const handleErrors = (response) => {
     return response;
 };
 
+// A get request to recover our stored JSON data using fetch
 const apiGetRequest = (user) => {
     fetch('/api/friends')
         .then((res) => {
@@ -94,6 +97,7 @@ const apiGetRequest = (user) => {
         });
 };
 
+// The apiRequest using fetch
 const apiPOSTRequest = (data) => {
     const url = '/api/friends';
     fetch(url, {
@@ -107,6 +111,7 @@ const apiPOSTRequest = (data) => {
     ).catch(error => console.error('Error:', error));
 };
 
+// Compares the answers from our JSON data to the users input data, and sends the closest match to our modal
 const answerCompare = (data, user) => {
     userScores = user.scores;
     const userName = user.name.toLowerCase();
