@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FriendFinder Survey</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
 </head>
 <body>
+    <div class="modal">
+        <div id="modal-content">
+            <span class="close-button">&times;</span>
+            <h1 id="modal-title"></h1>
+        </div>
+    </div>
     <header>
-        <h1>Survey</h1>
+        <h1 class="red">Survey</h1>
     </header>
     <div id="about_you">
         <h2>About You</h2>
@@ -120,33 +126,6 @@
          | 
         <a href="https://github.com/BrantKeener/FriendFinder" target="_blank">Github Repo</a>
     </div>
-    <script type="text/javascript">
-
-    // TODO add AJAX call for API below
-        
-        // Monitor for the submit button click
-        document.getElementById('quiz_submit').addEventListener('click', jsonSubmit = (app) => {
-            event.preventDefault();
-            
-            // Variable to house how many questions are in our quiz
-            const questionNumber = 10;
-            let answerArray = [];
-            
-            // Fill answerArray with data from our quiz responses
-            for(let i = 1; i <= questionNumber; i++) {
-                let questionValue = document.getElementById(`quest${i}`).value;
-                answerArray.push(questionValue);
-            }
-
-            // Build the newFriend object to send to the API
-            let newFriend = {
-                'name': document.getElementsByName('name')[0].value.trim(),
-                'photo': document.getElementsByName('pic')[0].value.trim(),
-                'scores': answerArray
-            }
-            console.log(newFriend);
-        });
-    
-    </script>
+    <script type="text/javascript" src="/static/front.js"></script>
 </body>
 </html>
