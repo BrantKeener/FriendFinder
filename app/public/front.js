@@ -15,9 +15,11 @@ document.addEventListener('click', (event) => {
         jsonSubmit();
         break;
         case('close-button'):
+        clearModal();
         toggleModal();
         break;
         case('modal show-modal'):
+        clearModal();
         toggleModal();
         break;
         case('modal show-modal modal-center'):
@@ -26,21 +28,54 @@ document.addEventListener('click', (event) => {
     };
 });
 
+const clearModal = () => {
+    let modalContent = document.getElementById('modal-content');
+    while(modalContent.firstChild) {
+        modalContent.removeChild(modalContent.firstChild);
+    }
+}
+
 // This is used to allow our modal to open and close. In addition, this popluates the modal with the appropriate dialog or images.
 toggleModal = (display, friend) => {
     const modal = document.querySelector('.modal');
+    const modalContent = document.getElementById('modal-content');
     modal.classList.toggle('show-modal');
     if(display === 'missingData') {
-        document.querySelector('#modal-title').textContent = 'Missing Data!';
-        let p = document.createElement('p');
+        const closeButton = document.createElement('span');
+        const title = document.createElement('h1');
+        const p = document.createElement('p');
+        closeButton.className = 'close-button';
+        closeButton.innerHTML = '&times';
+        title.className = 'modal-title';
+        title.textContent = 'Missing Data!';
         p.textContent = 'You have forgotten to enter either Name or Photo.'
-        document.querySelector('#modal-content').appendChild(p);
+        modalContent.appendChild(closeButton);
+        modalContent.appendChild(title);
+        modalContent.appendChild(p);
     } else if (display === 'friend') {
-        modal.classList.toggle('modal-center');
-        document.querySelector('#modal-title').textContent = friend.name;
-        let image = document.createElement('img');
+        let favoriteArray = [];
+        const closeButton = document.createElement('span');
+        const title = document.createElement('h1');
+        const image = document.createElement('img');
+        const list = document.createElement('ul');
+        const modalContent = document.querySelector('#modal-content');
+        closeButton.className = 'close-button';
+        closeButton.innerHTML = '&times';
+        title.className = 'modal-title';
+        favoriteThings(friend.scores, favoriteArray);
+        title.textContent = friend.name;
         image.src = friend.photo;
-        document.querySelector('#modal-content').appendChild(image);
+        modalContent.appendChild(closeButton);
+        modalContent.appendChild(title);
+        modalContent.appendChild(image);
+        modalContent.appendChild(list)
+        favoriteArray.map(element => {
+            const listItem = document.createElement('li');
+            listItem.className = 'friend-like-list';
+            list.appendChild(listItem);
+            listItem.textContent = element;
+        });
+        document.querySelector('.modal-title').style = 'text-align: center';
     };
 };
 
@@ -138,9 +173,34 @@ const answerCompare = (data, user) => {
         };
         sortedCompareArray.sort((a, b) => {return a - b});
         mostCompatible = unsortedCompareArray.indexOf(sortedCompareArray[0]);
-        console.log(lengthCheck);
     };
     if(lengthCheck === 0) {
         toggleModal('friend', data[mostCompatible]);
+    };
+};
+
+// This will find your friend's favorite things for posting
+const favoriteThings = (scores, faves) => {
+    const allBlurbsArray = [
+        'Enjoys rock climbing',
+        'Enjoys playing video games',
+        'Likes nights out on the town',
+        'Likes nights in',
+        'An avid traveler',
+        'Hangs out with creative people',
+        'Enjoys working out',
+        'Looks are important',
+        'Prefers tea to coffee',
+        'Hangs out with large groups'
+    ];
+    // Build a sorted array in descending order.
+    const sortedScores = scores.map(score => score);
+    sortedScores.sort((a, b) => {return b - a});
+    // Evaluate the first 3 items in the sorted array
+    for(let i = 0; i < 3; i++) {
+        let index = scores.indexOf(sortedScores[i]);
+        faves.push(allBlurbsArray[index]);
+        scores.splice([index], 1);
+        allBlurbsArray.splice([index], 1);
     };
 };

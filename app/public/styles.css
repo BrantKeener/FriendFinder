@@ -2,6 +2,7 @@
 :root {
     --main-bg: rgba(226,111,17, 0.7);
     --main-box: rgb(214, 176, 143, 0.9);
+    --main-box-maxo: rgb(214, 176, 143, 1);
     --survey-bg: rgba(149, 163, 190, 0.7);
     --main-button: rgba(149, 163, 190, 0.3);
     --main-button-hover: rgba(149, 163, 190, 1);
@@ -12,29 +13,6 @@
 }
 
 /* === Modal Styling === */
-.modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: grey;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-}
-
-#modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 1rem 1.5rem;
-    max-width: 35rem;
-    border-radius: 0.5rem;
-}
-
 .close-button {
     float: right;
     width: 1.5rem;
@@ -49,16 +27,41 @@
     background-color: darkgray;
 }
 
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--survey-bg);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+}
+
+/* .modal-center {
+    text-align: center;
+} */
+
+#modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--main-box-maxo);
+    padding: 1rem 1.5rem;
+    max-width: 40rem;
+    border-radius: 0.5rem;
+}
+
+
 .show-modal {
-    opacity: .75;
+    opacity: 1;
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
-.modal-center {
-    text-align: center;
-}
 
 /* === Page Styling === */
 
