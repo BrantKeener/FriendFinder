@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/BrantKeener/FriendFinder.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["FriendFinder", "friend", "survey", "quiz"],
+  "author": "Brant Keener",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/BrantKeener/FriendFinder/issues"
