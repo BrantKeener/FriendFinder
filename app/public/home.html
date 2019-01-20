@@ -5,23 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FriendFinder Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Merriweather+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <!-- For local CSS testing without the server, comment out the line above, and uncomment the line below -->
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
 </head>
 <body>
-    <header>
-        <h1 class="red">Friend Finder</h1>
-    </header>
-    <div id="intro_blurb">
-        <h2>Answer a few basic quesitons.</h2>
-        <h2>Then find the friend with the greatest compatibility!</h2>
-    </div>
-    <div id="survey_link">
-        <a href="/survey"><button type="button" href="/survey">Go to the Survey</button></a>
-    </div>
-    <div id="data_links">
-        <a href="/api/friends" target="_blank">API Friends List</a>
-         | 
-        <a href="https://github.com/BrantKeener/FriendFinder" target="_blank">Github Repo</a>
-    </div>
+    <section id="people-back">
+        <section id="main-container">
+            <section id="content-container">
+                <header id="head">
+                    <h1 id="home-head">Friend Finder</h1>
+                </header>
+                <div id="intro_blurb">
+                    <p class="intro-para">Answer a few basic quesitons.</p>
+                    <p class="intro-para">Then find the friend with the greatest compatibility!</p>
+                </div>
+                <div id="survey_link">
+                    <a href="/survey"><button id="launch-survey" type="button" href="/survey">Begin Survey</button></a>
+                </div>
+            </section>
+            <div id="data_links">
+                <a class="aux-links" href="/api/friends" target="_blank">API Friends List</a>
+                | 
+                <a class="aux-links" href="https://github.com/BrantKeener/FriendFinder" target="_blank">Github Repo</a>
+            </div>
+        </section>
+    </section>
 </body>
 </html>

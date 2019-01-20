@@ -1,4 +1,12 @@
 
+:root {
+    --main-bg: rgba(226,111,17, 0.7);
+    --main-box: rgb(214, 176, 143, 0.9);
+    --header-font: 'Cinzel', serif;
+    --body-font: 'Merriweather Sans', sans-serif;
+}
+
+/* Modal-Related CSS */
 .modal {
     position: fixed;
     left: 0;
@@ -37,7 +45,7 @@
 }
 
 .show-modal {
-    opacity: 1;
+    opacity: .75;
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
@@ -46,3 +54,93 @@
 .modal-center {
     text-align: center;
 }
+
+/* Home Page Styling */
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+/* button style reset */
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+#content-container {
+    background-color: var(--main-box);
+    padding: 10rem;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 2rem black;
+}
+
+#data_links {
+    position: relative;
+    left: 18%;
+    top: 2%;
+}
+
+#home-head {
+    border-bottom: .25rem solid black;
+    font-size: 5rem;
+    font-family: var(--header-font);
+    padding: 1rem;
+    text-align: center;
+    margin: .2rem 0rem;
+}
+
+#intro-blurb {
+    font-family: var(--body-font);
+}
+
+.intro-para {
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+#launch-survey {
+    font-family: var(--header-font);
+    font-weight: bold;
+    color: black;
+    padding: 1rem;
+    border-radius: 1rem;
+    border-left: .25rem solid black;
+    border-right: .25rem solid black;
+    background-color: var(--main-bg);
+}
+
+#launch-survey:hover,
+#launch-survey:focus {
+    background-color: rgba(226,111,17, 1);
+    padding: 1rem 1.5rem;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-size: cover;
+    background-repeat:  no-repeat;
+    background: var(--main-bg);
+}
+
+#people-back {
+    background-image: url(images/happy_people.jpg);
+    height: 100%;
+    background-size: cover;
+}
+
+#survey_link {
+    display: flex;
+    justify-content: center;
+}
+
