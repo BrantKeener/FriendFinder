@@ -28,6 +28,7 @@ document.addEventListener('click', (event) => {
     };
 });
 
+// Modal needs to be cleard after use so that data does not overlap
 const clearModal = () => {
     let modalContent = document.getElementById('modal-content');
     while(modalContent.firstChild) {

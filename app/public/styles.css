@@ -229,3 +229,29 @@ h2 {
     background-color: var(--survey-form-hover);
     padding: 1rem 2rem;
 }
+
+@media screen and (max-width: 1450px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    :root {
+        font-size: 12px;
+    }
+    img {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 1075px) {
+    #user_name_pic {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #name, #pic_path {
+        width: 40%;
+    }
+}
