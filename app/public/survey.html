@@ -17,118 +17,127 @@
             <h1 id="modal-title"></h1>
         </div>
     </div>
-    <header>
-        <h1 class="red">Survey</h1>
-    </header>
-    <div id="about_you">
-        <h2>About You</h2>
-        <form id="user_name_pic">
-            <label for="name">Name (Required)</label>
-            <input type="text" id="name" name="name">
-            <label for="pic_path">Link to Photo Image (Required)</label>
-            <input type="text" id="pic_path" name="pic">
-        </form>
-    </div>
-    <div id="survey_questions">
-        <form id="questions">
-            <h2>Question 1</h2>
-                <label for="quest1">Rock climibing is a great way to spend a free weekend.</label>
-                <select id="quest1">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <h2>Question 2</h2>
-                <label for="quest2">Playing video games is a good way to spend a laid back Sunday.</label>
-                <select id="quest2">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <h2>Question 3</h2>
-                <label for="quest3">I prefer to spend my nights off out and about.</label>
-                <select id="quest3">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <h2>Question 4</h2>
-                <label for="quest4">I prefer to spend my nights off at home.</label>
-                <select id="quest4">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <h2>Question 5</h2>
-                <label for="quest5">I am an avid traveler.</label>
-                <select id="quest5">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <h2>Question 6</h2>
-                <label for="quest6">I like to be around creative people.</label>
-                <select id="quest6">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <h2>Question 7</h2>
-                <label for="quest7">Working out is important to me.</label>
-                <select id="quest7">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <h2>Question 8</h2>
-                <label for="quest8">It is important to me that the people around me look and dress well.</label>
-                <select id="quest8">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <h2>Question 9</h2>
-                <label for="quest9">I prefer tea over coffee.</label>
-                <select id="quest9">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <h2>Question 10</h2>
-                <label for="quest10">I like to hangout with large groups of people.</label>
-                <select id="quest10">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-            <button id="quiz_submit" type="submit">Find My Friend!</button>
-        </form>
-    </div>
-    <div id="data_links">
-        <a href="/api/friends" target="_blank">API Friends List</a>
-         | 
-        <a href="https://github.com/BrantKeener/FriendFinder" target="_blank">Github Repo</a>
-    </div>
+    <section id="survey-back">
+            <section id="survey-container">
+                <section id="survey-content-container">
+                    <header>
+                        <h1 id="survey-head">Survey</h1>
+                    </header>
+                    <div id="about_you">
+                        <h2>About You</h2>
+                        <form id="user_name_pic">
+                            <label class="labels" for="name">Name (Required)</label>
+                            <input class = "form_element" type="text" id="name" name="name">
+                            <label class="labels" for="pic_path">Link to Photo Image (Required)</label>
+                            <input class = "form_element" type="text" id="pic_path" name="pic">
+                        </form>
+                    </div>
+                    <div id="survey_questions">
+                        <form id="questions">
+                            <h2>Question 1</h2>
+                                <label class="labels" for="quest1">Rock climibing is a great way to spend a free weekend.</label>
+                                <select class = "form_element" id="quest1">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            <h2>Question 2</h2>
+                                <label class="labels" for="quest2">Playing video games is a good way to spend a laid back Sunday.</label>
+                                <select class = "form_element" id="quest2">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            <h2>Question 3</h2>
+                                <label class="labels" for="quest3">I prefer to spend my nights off out and about.</label>
+                                <select class = "form_element" id="quest3">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            <h2>Question 4</h2>
+                                <label class="labels" for="quest4">I prefer to spend my nights off at home.</label>
+                                <select class = "form_element" id="quest4">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            <h2>Question 5</h2>
+                                <label class="labels" for="quest5">I am an avid traveler.</label>
+                                <select class = "form_element" id="quest5">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            <h2>Question 6</h2>
+                                <label class="labels" for="quest6">I like to be around creative people.</label>
+                                <select class = "form_element" id="quest6">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            <h2>Question 7</h2>
+                                <label class="labels" for="quest7">Working out is important to me.</label>
+                                <select class = "form_element" id="quest7">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            <h2>Question 8</h2>
+                                <label class="labels" for="quest8">It is important to me that the people around me look and dress well.</label>
+                                <select class = "form_element" id="quest8">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            <h2>Question 9</h2>
+                                <label class="labels" for="quest9">I prefer tea over coffee.</label>
+                                <select class = "form_element" id="quest9">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            <h2>Question 10</h2>
+                                <label class="labels" for="quest10">I like to hangout with large groups of people.</label>
+                                <select class = "form_element" id="quest10">
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </br>
+                            <section id="submit_area">
+                                <button id="quiz_submit" type="submit">Find My Friend!</button>
+                            </section>
+                        </form>
+                    </div>
+                </section>
+                <div id="data_links_survey">
+                    <a href="/api/friends" target="_blank">API Friends List</a>
+                    | 
+                    <a href="https://github.com/BrantKeener/FriendFinder" target="_blank">Github Repo</a>
+                </div>
+            </section>
+        </section>
     <script type="text/javascript" src="/static/front.js"></script>
 </body>
 </html>

@@ -2,11 +2,16 @@
 :root {
     --main-bg: rgba(226,111,17, 0.7);
     --main-box: rgb(214, 176, 143, 0.9);
+    --survey-bg: rgba(149, 163, 190, 0.7);
+    --main-button: rgba(149, 163, 190, 0.3);
+    --main-button-hover: rgba(149, 163, 190, 1);
+    --survey-form: rgba(226, 111, 17, 0.5);
+    --survey-form-hover: rgba(226, 111, 17, 1);
     --header-font: 'Cinzel', serif;
     --body-font: 'Merriweather Sans', sans-serif;
 }
 
-/* Modal-Related CSS */
+/* === Modal Styling === */
 .modal {
     position: fixed;
     left: 0;
@@ -55,7 +60,7 @@
     text-align: center;
 }
 
-/* Home Page Styling */
+/* === Page Styling === */
 
 html, body {
     height: 100%;
@@ -64,9 +69,9 @@ html, body {
     margin: 0%;
 }
 
-/* button style reset */
+/* button and form element style reset */
 
-button {
+button, .form_element{
     padding: 0;
     border: none;
     font: inherit;
@@ -74,20 +79,45 @@ button {
     background-color: transparent;
 }
 
-#content-container {
-    background-color: var(--main-box);
-    padding: 10rem;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 0.5rem 2rem black;
+#about_you {
+    border-bottom: .25rem solid black;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
-#data_links {
+
+#home-content-container, #survey-content-container{
+    background-color: var(--main-box);
+    padding: 5rem;
+    border-radius: 1rem;
+    box-shadow: 1rem 1rem 2rem rgba(0,0,0, .7);
+}
+
+#data_links_home {
     position: relative;
     left: 18%;
     top: 2%;
 }
 
-#home-head {
+#data_links_survey {
+    position: relative;
+    left: 18%;
+    top: 2%;
+}
+
+.form_element {
+    padding: .2rem;
+    border-radius: 1rem;
+    border-left: .2rem solid black;
+    border-right: .2rem solid black;
+    background-color: var(--survey-form);
+}
+
+h2 {
+    font-family: var(--header-font);
+}
+
+#home-head, #survey-head {
     border-bottom: .25rem solid black;
     font-size: 5rem;
     font-family: var(--header-font);
@@ -105,24 +135,33 @@ button {
     font-size: 1.5rem;
 }
 
-#launch-survey {
+.labels {
+    font-family: (var(--body-font));
+    font-size: 1.25rem;
+}
+
+#launch-survey, #quiz_submit {
     font-family: var(--header-font);
     font-weight: bold;
     color: black;
-    padding: 1rem;
     border-radius: 1rem;
     border-left: .25rem solid black;
     border-right: .25rem solid black;
-    background-color: var(--main-bg);
+    transition: all 0.5s ease;
+}
+
+#launch-survey {
+    padding: 1rem;
+    background-color: var(--main-button);
 }
 
 #launch-survey:hover,
 #launch-survey:focus {
-    background-color: rgba(226,111,17, 1);
+    background-color: var(--main-button-hover);
     padding: 1rem 1.5rem;
 }
 
-#main-container {
+#main-container, #survey-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,13 +169,40 @@ button {
     height: 100%;
     background-size: cover;
     background-repeat:  no-repeat;
+}
+
+#main-container {
     background: var(--main-bg);
 }
 
-#people-back {
+#home-back, #survey-back{
     background-image: url(images/happy_people.jpg);
     height: 100%;
     background-size: cover;
+}
+
+#submit_area {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#survey-back {
+    background-image: url(images/happy_person.jpg);
+}
+
+#survey-container {
+    background: var(--survey-bg);
+}
+
+#survey-content-container {
+    padding: 1rem 5rem 3rem;
+    width: 60%;
+    height: 83%;
+}
+
+#survey-head {
+    padding: 0%;
+    margin: 0%;
 }
 
 #survey_link {
@@ -144,3 +210,19 @@ button {
     justify-content: center;
 }
 
+#survey_questions {
+    padding: .7rem 1rem;
+    height: 60%;
+    overflow-y: scroll;
+}
+
+#quiz_submit {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--survey-form);
+}
+
+#quiz_submit:hover {
+    background-color: var(--survey-form-hover);
+    padding: 1rem 2rem;
+}
