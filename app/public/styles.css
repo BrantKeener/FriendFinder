@@ -254,4 +254,8 @@ h2 {
     #name, #pic_path {
         width: 40%;
     }
+
+    #survey_questions {
+        height: 50%;
+    }
 }

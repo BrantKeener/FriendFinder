@@ -88,9 +88,9 @@ jsonSubmit = () => {
     let answerArray = [];
     let name = document.getElementsByName('name')[0].value;
     let photo = document.getElementsByName('pic')[0].value;
-
-    if(name !== '' || photo !== '') {
-        if(name.trim() !== '' || photo.trim() !== '') {
+// Make sure that neither the photo nor the name are blank.
+    if(name !== '' && photo !== '') {
+        if(name.trim() !== '' && photo.trim() !== '') {
             // Fill answerArray with data from our quiz responses
             for(let i = 1; i <= questionNumber; i++) {
                 let questionValue = document.getElementById(`quest${i}`).value;
@@ -143,7 +143,7 @@ const apiPOSTRequest = (data) => {
             'Content-Type': 'application/json'
         }
     }).then(response => handleErrors(response)
-    ).then(response => console.log('Success:', JSON.stringify(response))
+    // ).then(response => console.log('Success:', JSON.stringify(response))
     ).catch(error => console.error('Error:', error));
 };
 
