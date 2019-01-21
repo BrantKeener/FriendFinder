@@ -66,6 +66,8 @@ toggleModal = (display, friend) => {
         favoriteThings(friend.scores, favoriteArray);
         title.textContent = friend.name;
         image.src = friend.photo;
+        image.style.maxWidth = '600px';
+        image.style.maxHeight = '600px';
         modalContent.appendChild(closeButton);
         modalContent.appendChild(title);
         modalContent.appendChild(image);
