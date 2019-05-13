@@ -1,6 +1,8 @@
 
 # FRND-FNDR
 
+![Frnd-Fndr Capture](./app/public/images/frnd-fndr-cap.png)
+
 *10 questions until you find your next friend!*
 
 **FRND-FNDR** allows users to answer 10 simple personality/interest related questions, and then searches the server to find a compatible friend.
